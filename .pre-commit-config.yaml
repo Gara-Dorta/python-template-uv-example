@@ -1,0 +1,50 @@
+repos:
+  - repo: builtin
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+        exclude: |
+          (?x)(
+              ^.vscode/launch.json|
+              ^.vscode/settings.json
+          )
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: debug-statements
+      - id: name-tests-test
+        args: ["--pytest-test-first"]
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.13
+    hooks:
+      # first, lint + autofix
+      - id: ruff
+        types_or: [python, pyi, jupyter]
+        args: [--fix, --show-fixes]
+      # then, format
+      - id: ruff-format
+
+  - repo: https://github.com/lyz-code/yamlfix
+    rev: 1.19.1
+    hooks:
+      - id: yamlfix
+        exclude: |
+          (?x)(
+              ^.copier-answers.yml|
+              ^.pre-commit-config.yaml
+          )
+
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.9.26
+    hooks:
+      - id: uv-lock
