@@ -29,6 +29,7 @@ def add(a: int, b: int) -> int:
 def main() -> None:
     print(f"Running python_template_uv_example version {__version__}")
     print(f"Result is: 1+2 = {add(1, 2)}")
+    print("a")
 
 
 if __name__ == "__main__":
