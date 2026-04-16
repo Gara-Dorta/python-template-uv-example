@@ -2,5 +2,7 @@
     "variable": {
         "name": "example_variable",
         "value": 42
+    },
+    "function": {
     }
 }
