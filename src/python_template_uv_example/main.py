@@ -19,7 +19,7 @@ def add(a: int, b: int) -> int:
     if a < 0 or b < 0:
         msg = "Both arguments must be positive"
         raise ValueError(msg)
-    c = a + b
+    c = a + b + 1
     return a + b + c
 
 
