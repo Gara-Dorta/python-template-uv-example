@@ -3,13 +3,6 @@
 from python_template_uv_example import __version__
 
 
-def foo1(a):
-    c = a + 1
-    if a > 0 and a > 10:
-        return 10
-    return a + c
-
-
 def add(a: int, b: int) -> int:
     """Adds two positive numbers together.
 
@@ -26,8 +19,7 @@ def add(a: int, b: int) -> int:
     if a < 0 or b < 0:
         msg = "Both arguments must be positive"
         raise ValueError(msg)
-    c = a + b + 1
-    return a + b + c
+    return a + b
 
 
 def main() -> None:

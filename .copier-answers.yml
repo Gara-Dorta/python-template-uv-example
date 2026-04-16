@@ -1,5 +1,5 @@
 # Changes here will be overwritten by Copier
-_commit: v0.4.1-7-gf228769
+_commit: v0.5.0
 _src_path: ./python-project-template/
 email: e.dorta@tudelft.nl
 environment_manager: uv
